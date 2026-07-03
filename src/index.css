@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Sans+Bengali:wght@400;500;700&family=Noto+Serif+Bengali:wght@400;500;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Noto Serif Bengali", "Hind Siliguri", serif;
+  --font-sans: "Hind Siliguri", "Inter", sans-serif;
+  --font-cursive: "Great Vibes", cursive;
+  --font-mono: "Space Grotesk", "JetBrains Mono", monospace;
+  
+  --color-wedding-maroon: #38070d;
+  --color-wedding-crimson: #630d18;
+  --color-wedding-gold: #d4af37;
+  --color-wedding-gold-dark: #b8860b;
+  --color-wedding-gold-light: #f9f0d1;
+  --color-wedding-rose: #fff5f6;
+  --color-wedding-pink: #ffdae0;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-wedding-maroon);
+    color: var(--color-wedding-rose);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+}
+
+/* Custom shimmering text animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.gold-shimmer {
+  background: linear-gradient(
+    to right,
+    #bf953f 0%,
+    #fcf6ba 25%,
+    #b38728 50%,
+    #fbf5b7 75%,
+    #aa771c 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 6s linear infinite;
+}
+
+/* Custom paper card background pattern */
+.card-pattern {
+  background-color: #520b13;
+  background-image: radial-gradient(#d4af37 0.4px, transparent 0.4px), radial-gradient(#d4af37 0.4px, #520b13 0.4px);
+  background-size: 16px 16px;
+  background-position: 0 0, 8px 8px;
+  opacity: 0.95;
+}
+
+/* Golden Border styles */
+.gold-border {
+  border: 2px solid;
+  border-image: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c) 1;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-wedding-maroon);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-wedding-gold);
+  border-radius: 3px;
+}
+
+/* Pulse animation for reveal seal */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.03);
+  }
+}
+
+.floating-seal {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Sparkle stars decoration */
+@keyframes sparkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.sparkle-star {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+/* Scratch off overlay pointer events */
+.scratch-overlay {
+  touch-action: none;
+  cursor: pointer;
+}
+
+/* Utilities to hide scrollbars */
+.scrollbar-none {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
