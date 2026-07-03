@@ -1,0 +1,6 @@
+{
+  "name": "নিমন্ত্রণপত্র - প্রশান্ত ও সর্না",
+  "description": "প্রশান্ত ও সর্নার শুভ বিবাহ অনুষ্ঠানের একটি ডিজিটাল সস্নেহ আমন্ত্রণপত্র",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
